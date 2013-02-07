@@ -125,6 +125,8 @@ String password=request.getParameter("password");
 		e.setPwd(passw);
 		em.persist(e);
 		em.getTransaction().commit();
+		String nom = (String) session.getAttribute("nom");
+		session.setAttribute("nom", request.getParameter("login"));
 		
 		request.getRequestDispatcher("/Connexion.jsp").forward(request, response);
 	}
