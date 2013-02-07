@@ -23,12 +23,20 @@
   </servlet>
   <servlet>
     <servlet-name>connexionVerif</servlet-name>
-    <servlet-class>Controller.ConnexionController</servlet-class>
+    <servlet-class>Controller.UtilisateurController</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>inscriptionVerif</servlet-name>
-  	<servlet-class>Controller.UtilisateurController</servlet-class>
+    <servlet-name>inscriptionVerif</servlet-name>
+    <servlet-class>Controller.UtilisateurController</servlet-class>
   </servlet>
+    <servlet>
+    <servlet-name>logoutVerif</servlet-name>
+    <servlet-class>Controller.Logout</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>logoutVerif</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>inscriptionVerif</servlet-name>
     <url-pattern>/verifInscription</url-pattern>
@@ -49,5 +57,4 @@
     <servlet-name>ReservationController</servlet-name>
     <url-pattern>/Reservation</url-pattern>
   </servlet-mapping>
-  
 </web-app>

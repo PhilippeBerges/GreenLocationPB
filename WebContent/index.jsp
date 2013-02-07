@@ -12,5 +12,11 @@
     <form action="./Vehicules" method="get">
     <input type="submit"/>
     </form>
+    <a href="ProfilClient.jsp">Profile Client</a>
+    
+       <form action="logout" method="get">
+    <input type="submit" value="Logout"/>
+    </form>
+    
   </body>
 </html> 
