@@ -4,10 +4,10 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @MappedSuperclass
+@Entity
 public class Utilisateur implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
 	public Utilisateur() {
 		super();
 	}

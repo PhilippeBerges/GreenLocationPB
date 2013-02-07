@@ -21,6 +21,7 @@ public class Employe extends Utilisateur implements Serializable {
 	private String fonction;
 	private String nom;
 	private String prenom;
+	private boolean admin;
 	
 	@OneToMany(mappedBy = "employe")
 	private final List<Reservation> reservations = new ArrayList<Reservation>();
@@ -32,7 +33,7 @@ public class Employe extends Utilisateur implements Serializable {
 	    return reservations;
 	  }
 
-	public Employe(String fonction, String nom, String prenom) {
+	public Employe(String fonction, String nom, String prenom, String admin) {
 		super();
 		this.fonction = fonction;
 		this.nom = nom;
@@ -61,6 +62,16 @@ public class Employe extends Utilisateur implements Serializable {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+	
+	
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 	public Employe() {

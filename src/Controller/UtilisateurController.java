@@ -8,12 +8,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modele.Utilisateur;
 
@@ -32,7 +36,11 @@ public class UtilisateurController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletOutputStream out = response.getOutputStream();
-		 try {  
+		
+		HttpSession session = request.getSession (true); 
+		String s=session.getId();
+		session.setAttribute("id",s); 
+		try {  
 			 String password=request.getParameter("password");
 				
 				byte[] unencodedPassword = password.getBytes();
@@ -65,6 +73,7 @@ public class UtilisateurController extends HttpServlet {
 				} 
 			 else 
 				 {
+				 session.setAttribute("login", request.getParameter("login"));
 				 response.sendRedirect("index.jsp"); //error page 
 				 }
 			 } catch (Throwable theException) 
@@ -78,7 +87,9 @@ public class UtilisateurController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		HttpSession session = request.getSession (true); 
+		String s=session.getId();
+		session.setAttribute("id",s); 
 		Query query= em.createQuery("SELECT i FROM Utilisateur i WHERE i.login = :login");
 	query.setParameter("login", request.getParameter("login"));
 	java.util.List results = query.getResultList();
