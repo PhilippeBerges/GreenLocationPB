@@ -29,13 +29,21 @@
     <servlet-name>inscriptionVerif</servlet-name>
     <servlet-class>Controller.UtilisateurController</servlet-class>
   </servlet>
-    <servlet>
+   <servlet>
+    <servlet-name>profileVerif</servlet-name>
+    <servlet-class>Controller.ProfileController</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>logoutVerif</servlet-name>
     <servlet-class>Controller.Logout</servlet-class>
   </servlet>
-   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>logoutVerif</servlet-name>
     <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>profileVerif</servlet-name>
+    <url-pattern>/profilClient</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>inscriptionVerif</servlet-name>

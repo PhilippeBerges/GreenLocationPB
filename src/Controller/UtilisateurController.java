@@ -73,7 +73,10 @@ public class UtilisateurController extends HttpServlet {
 				} 
 			 else 
 				 {
-				 session.setAttribute("login", request.getParameter("login"));
+				 String nom = (String) session.getAttribute("nom");
+				 session.setAttribute("nom", request.getParameter("login"));
+				 String mdp= (String) session.getAttribute("mdp");
+				 session.setAttribute("mdp", passw);
 				 response.sendRedirect("index.jsp"); //error page 
 				 }
 			 } catch (Throwable theException) 
@@ -127,7 +130,6 @@ String password=request.getParameter("password");
 		em.getTransaction().commit();
 		String nom = (String) session.getAttribute("nom");
 		session.setAttribute("nom", request.getParameter("login"));
-		
 		request.getRequestDispatcher("/Connexion.jsp").forward(request, response);
 	}
 	

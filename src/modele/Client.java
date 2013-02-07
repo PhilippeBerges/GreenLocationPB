@@ -22,7 +22,7 @@ public class Client extends Utilisateur implements Serializable {
 	private String prenom;
 	private String adresse;
 	private String ville;
-	private int codePostal;
+	private String codePostal;
 	
 	@OneToMany(mappedBy = "client")
 	private final List<Reservation> reservations = new ArrayList<Reservation>();
@@ -63,11 +63,11 @@ public class Client extends Utilisateur implements Serializable {
 		this.ville = ville;
 	}
 
-	public int getCodePostal() {
+	public String getCodePostal() {
 		return codePostal;
 	}
 
-	public void setCodePostal(int codePostal) {
+	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
 
