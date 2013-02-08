@@ -41,7 +41,7 @@
     <servlet-name>logoutVerif</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>adminCli</servlet-name>
     <servlet-class>Controller.AdminClient</servlet-class>
   </servlet>
@@ -49,7 +49,7 @@
     <servlet-name>adminCli</servlet-name>
     <url-pattern>/AdministrationClient</url-pattern>
   </servlet-mapping>
-     <servlet>
+  <servlet>
     <servlet-name>enregCli</servlet-name>
     <servlet-class>Controller.EnregistrementCli</servlet-class>
   </servlet>
