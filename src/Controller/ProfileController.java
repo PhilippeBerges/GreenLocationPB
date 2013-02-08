@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import modele.Client;
 import modele.ConnectionDB;
+import modele.Employe;
 import modele.Reservation;
 
 /**
@@ -33,7 +34,15 @@ public class ProfileController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Employe emp = new Employe();
 		
+		emp.setNom(request.getParameter("nomEmp"));
+		emp.setPrenom(request.getParameter("preCli"));
+		emp.setFonction(request.getParameter("fonctCli"));
+		emp.setAdmin(false);
+		//cli.setCodePostal(request.getParameter("cpCli"));
+		db.add(emp);
+		response.sendRedirect("index.jsp");
 	}
 
 	/**

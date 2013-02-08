@@ -29,7 +29,7 @@
     <servlet-name>inscriptionVerif</servlet-name>
     <servlet-class>Controller.UtilisateurController</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>profileVerif</servlet-name>
     <servlet-class>Controller.ProfileController</servlet-class>
   </servlet>
@@ -41,7 +41,23 @@
     <servlet-name>logoutVerif</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
-   <servlet-mapping>
+   <servlet>
+    <servlet-name>adminCli</servlet-name>
+    <servlet-class>Controller.AdminClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminCli</servlet-name>
+    <url-pattern>/AdministrationClient</url-pattern>
+  </servlet-mapping>
+     <servlet>
+    <servlet-name>enregCli</servlet-name>
+    <servlet-class>Controller.EnregistrementCli</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>enregCli</servlet-name>
+    <url-pattern>/EnregistrementClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>profileVerif</servlet-name>
     <url-pattern>/profilClient</url-pattern>
   </servlet-mapping>

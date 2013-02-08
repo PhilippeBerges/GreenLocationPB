@@ -24,7 +24,13 @@ public class ConnectionDB {
 		em.persist(o);
 		commitTransaction();
 	}
-	 
+
+	public void update(Object o) {
+		beginTransaction();
+		em.flush();
+		commitTransaction();
+	}
+	
 	public void del(Object o) {
 		beginTransaction();
 		em.remove(o);
@@ -33,6 +39,12 @@ public class ConnectionDB {
 	public void add(Categorie c) {
 		beginTransaction();
 		em.persist(c);
+		commitTransaction();
+	}
+	
+	public void update(Categorie c) {
+		beginTransaction();
+		em.flush();
 		commitTransaction();
 	}
 	 
