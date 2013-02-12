@@ -54,7 +54,7 @@ public class EnregistrementEmp extends HttpServlet {
 		    Employe empRes = (Employe) db.get(sql);
 	    
 				if (empRes == null) {
-				System.out.println("Client non trouvé");
+				System.out.println("Employe non trouvé");
 				} else {	
 					empRes.setNom(nomEmpStr);	
 					empRes.setPrenom(prenomEmpStr);
@@ -62,7 +62,7 @@ public class EnregistrementEmp extends HttpServlet {
 					empRes.setAdmin(adminEmpStr);
 				db.update(empRes);
 				RequestDispatcher dispatcher = getServletContext().
-						getRequestDispatcher("/ListeClients.jsp"); 
+						getRequestDispatcher("/ListeEmployes.jsp"); 
 						dispatcher.forward(request, response); 
 				}
 				db.close();

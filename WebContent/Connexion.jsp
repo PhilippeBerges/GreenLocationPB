@@ -8,17 +8,13 @@
 </head>
 <body>
 <h1>Connexion</h1>
-<div>
-ID:
-<%Object id =session.getAttribute("id");%>
-<%=id%>
-</div>
+
 <form name="formConnexion" action="connexion" method="get">
 <table>
 
-<tr><td>Login:</td><td><input type="text" name="login" value = <%Object nom =session.getAttribute("nom");%><%=nom%>></input></td></tr>
+<tr><td>Login:</td><td><input type="text" name="login" value = <%Object nom = session.getAttribute("nom"); %>></input></td></tr>
 <tr><td>Password:</td><td><input type="password" name="password"></input></td></tr>
-<tr><td><input type="submit" name="Soumettre" value="Soumettre"/><input type="reset" name="reset" value="Rafraichir"/></td></tr>   
+<tr><td><input type="submit" name="Soumettre" value="Soumettre"/><input type="reset" name="reset" value="Rafraichir"/></td></tr>
 </table>
 </form>
 <a href="Inscription.jsp">Inscription</a>

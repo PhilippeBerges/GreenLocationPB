@@ -37,9 +37,9 @@ public class UtilisateurController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletOutputStream out = response.getOutputStream();
 		
-		HttpSession session = request.getSession (true); 
-		String s=session.getId();
-		session.setAttribute("id",s); 
+		 HttpSession session = request.getSession(true);
+		//HttpSession session = request.getSession (true); 
+		 
 		try {  
 			 String password=request.getParameter("password");
 				
@@ -91,8 +91,6 @@ public class UtilisateurController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession (true); 
-		String s=session.getId();
-		session.setAttribute("id",s); 
 		Query query= em.createQuery("SELECT i FROM Utilisateur i WHERE i.login = :login");
 	query.setParameter("login", request.getParameter("login"));
 	java.util.List results = query.getResultList();
@@ -128,8 +126,8 @@ String password=request.getParameter("password");
 		e.setPwd(passw);
 		em.persist(e);
 		em.getTransaction().commit();
-		String nom = (String) session.getAttribute("nom");
 		session.setAttribute("nom", request.getParameter("login"));
+		Object o = session.getAttribute("nom");
 		request.getRequestDispatcher("/Connexion.jsp").forward(request, response);
 	}
 	

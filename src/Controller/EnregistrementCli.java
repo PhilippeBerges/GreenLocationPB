@@ -53,7 +53,7 @@ public class EnregistrementCli extends HttpServlet {
 		String cpCliStr=request.getParameter("client_cp");
 		PrintWriter out = response.getWriter();
 			    
-	    String sql = "select c from Client c where c.nom = "+nomCliStr+" and c.prenom = "+prenomCliStr+" and c.adresse="+adresseCliStr+" and c.ville = "+villeCliStr+" and c.codePostal ="+cpCliStr+"";
+	    String sql = "select c from Client c where c.nom = \""+nomCliStr+"\" and c.prenom = \""+prenomCliStr+"\"";
 	    Client clientResult = (Client) db.get(sql);
 	    
 				if (clientResult == null) {

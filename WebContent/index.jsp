@@ -8,12 +8,15 @@
     	<title>GlassFish JSP Page</title>
   </head>
   <body>
-    <h1>Hello <%Object login =session.getAttribute("login");%> </h1>
+    <h1>Hello <%Object nom =session.getAttribute("nom");%><%=nom%> </h1>
     <form action="./Vehicules" method="get">
     <input type="submit"/>
     </form>
     <a href="ProfilClient.jsp">Profile Client</a>
     
+    <form action="./AdministrationClient" method="get">
+    <input type="submit" value="Liste clients"/>
+    </form>
        <form action="logout" method="get">
     <input type="submit" value="Logout"/>
     </form>

@@ -18,7 +18,6 @@ import modele.Vehicule;
 /**
  * Servlet implementation class AdminClient
  */
-@WebServlet("/AdminClient")
 public class AdminClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PERSISTENCE_UNIT_NAME = "LocationVoitureDB";
@@ -36,12 +35,11 @@ public class AdminClient extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();		
-	    List<Client> clientList = db.getAll("Client");		    
-	
-	    out.println("No de client dans le DB: " + clientList.size());
+	    List<Client> clientList = db.getAll("Client");
+	    
 	    request.setAttribute("Clients", clientList);		
 		RequestDispatcher dispatcher = getServletContext().
-		getRequestDispatcher("/ListeClient.jsp"); 
+		getRequestDispatcher("/ListeClients.jsp"); 
 		dispatcher.forward(request, response);
 	}	
 	
@@ -58,11 +56,9 @@ public class AdminClient extends HttpServlet {
 		String cpCliStr=request.getParameter("client_cp");
 		PrintWriter out = response.getWriter();
 			    
-	    String sql = "select c from Client c where c.nom = "+nomCliStr+" and c.prenom = "+prenomCliStr+" and c.adresse="+adresseCliStr+" and c.ville = "+villeCliStr+" and c.codePostal ="+cpCliStr+"";
+	    String sql = "select c from Client c where c.nom = \""+nomCliStr+"\" and c.prenom = \""+prenomCliStr+"\"";
 	    List<Client> clientList = db.get(sql);
 	    
-	   
-	    out.println("No de vehicule dans le DB: " + clientList.size());
 	    request.setAttribute("Clients", clientList);
 		
 		RequestDispatcher dispatcher = getServletContext().

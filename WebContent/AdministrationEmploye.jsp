@@ -30,17 +30,14 @@ if (empList.size()!=0)
 			<td><input type="text" name="employe_nom" value="<%= element.getNom() %>"/></td>
 			<td><input type="text" name="employe_prenom" value="<%= element.getPrenom() %>"/></td>
 			<td><input type="text" name="employe_fonction" value="<%= element.getFonction() %>"/></td>
-			<tr><td>Administrateur:</td><td><select name="employe_admin">
+			<td>Administrateur:</td><td><select name="employe_admin">
 				<option value="Admin">Administrateur</option>
 				<option value="NoAdmin">Non Administrateur</option>
-			</select></td></tr>
+			</select></td>
 			
 			<td><input type="submit" Value="Modifier Employe" /></td>
-			
 			<td><input type="submit" Value="Supprimer Employe" /></td>
-			<!-- <td>
-			<input type="submit" Value="Remplir le formulaire d'état" />		
-			</td> -->
+
 					</tr>
 			
 			<%

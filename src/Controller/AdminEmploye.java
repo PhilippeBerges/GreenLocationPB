@@ -40,7 +40,7 @@ public class AdminEmploye extends HttpServlet {
 	    List<Employe> empList = db.getAll("Employe");		    
 	
 	    out.println("No d'Employe dans le DB: " + empList.size());
-	    request.setAttribute("Clients", empList);		
+	    request.setAttribute("Employes", empList);		
 		RequestDispatcher dispatcher = getServletContext().
 		getRequestDispatcher("/ListeEmploye.jsp"); 
 		dispatcher.forward(request, response);
